@@ -45,9 +45,9 @@
 
     /* responsive layout for larger screens */
     @media(min-width:880px){
-      main{grid-template-columns: 2fr 360px;align-items:start}
+      main{grid-template-columns:1fr;align-items:start}
       .posts{grid-column:1/2}
-      .sidebar{grid-column:2/3}
+      
       .brand h1{font-size:2rem}
       .bottom-banner{display:block;position:fixed;left:0;right:0;bottom:12px;margin:auto;max-width:var(--max-width);z-index:40}
     }
@@ -63,8 +63,8 @@
       <div class="brand">
         <div class="logo">LP</div>
         <div>
-          <h1 id="page-title">Aplikasi Penghasil Uang Gratis</h1>
-          <p class="lead">Cukup angkat panggilan dan membalas chat bisa hasilkan jutaan perminggu.</p>
+          <h1 id="page-title">Aplikasi Penghasil Uang Tanpa Modal</h1>
+          <p class="lead">Hasilkan uang jutaan rupiah perminggu dari aplikasi ini.</p>
         </div>
       </div>
 
@@ -104,15 +104,17 @@
             </div>
           </article>
 
+          <!-- AD: tengah post (di antara content items) -->
+          <div id="ad-middle-post" class="ad-slot" role="complementary" aria-label="Iklan di tengah post">
+            <!-- Masukkan kode iklan Anda di sini. Contoh: <script async src="..."></script> <ins class="adsbygoogle" ...></ins> -->
+            Placeholder Iklan — letakkan kode iklan Anda di div#ad-middle-post
+          </div>
+
+
         </div>
       </section>
 
-      <aside class="sidebar">
-        <div class="post" style="padding:14px">
-          <h4>Sidebar</h4>
-          <p class="small muted">Tautan, penawaran, atau iklan lain bisa ditempatkan di sini.</p>
-        </div>
-      </aside>
+      
     </main>
 
     <!-- contoh banner bawah (opsional) -->
