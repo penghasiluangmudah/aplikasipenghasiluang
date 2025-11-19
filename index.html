@@ -1,0 +1,160 @@
+<!doctype html>
+<html lang="id">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Landing Page Responsive — Contoh</title>
+  <meta name="description" content="Contoh landing page responsif dengan placeholder iklan di bawah judul dan di tengah post." />
+  <style>
+    :root{
+      --max-width:1100px;
+      --accent:#0ea5a4;
+      --muted:#6b7280;
+      --bg:#f8fafc;
+      --card:#ffffff;
+      --radius:12px;
+    }
+    *{box-sizing:border-box}
+    body{margin:0;font-family:Inter, ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', Arial;background:var(--bg);color:#111}
+    .wrap{max-width:var(--max-width);margin:24px auto;padding:16px}
+
+    header.site-header{display:flex;flex-direction:column;gap:12px;align-items:flex-start}
+    .brand{display:flex;align-items:center;gap:12px}
+    .logo{width:56px;height:56px;border-radius:10px;background:linear-gradient(135deg,var(--accent),#7dd3fc);display:flex;align-items:center;justify-content:center;color:white;font-weight:700}
+    h1{font-size:1.6rem;margin:0}
+    p.lead{margin:0;color:var(--muted)}
+
+    /* AD slot style (visual only) */
+    .ad-slot{width:100%;min-height:90px;border:2px dashed #e6e6e6;background:linear-gradient(180deg, rgba(0,0,0,0.01), rgba(0,0,0,0.02));display:flex;align-items:center;justify-content:center;border-radius:8px;color:var(--muted);font-weight:600}
+
+    main{display:grid;grid-template-columns:1fr;gap:18px;margin-top:18px}
+
+    .hero{background:var(--card);padding:20px;border-radius:var(--radius);box-shadow:0 6px 18px rgba(15,23,42,0.06)}
+    .hero h2{margin:0 0 8px 0}
+    .cta{display:inline-block;padding:10px 16px;border-radius:10px;background:var(--accent);color:white;text-decoration:none}
+
+    .posts{display:grid;gap:14px}
+    .post{background:var(--card);padding:16px;border-radius:12px;box-shadow:0 6px 18px rgba(15,23,42,0.04)}
+    .post h3{margin:0 0 10px 0}
+    .post p{margin:0;color:var(--muted);line-height:1.5}
+
+    .post .post-body{margin-top:12px}
+
+    /* small screens: fixed bottom banner example */
+    .bottom-banner{display:none}
+
+    /* responsive layout for larger screens */
+    @media(min-width:880px){
+      main{grid-template-columns: 2fr 360px;align-items:start}
+      .posts{grid-column:1/2}
+      .sidebar{grid-column:2/3}
+      .brand h1{font-size:2rem}
+      .bottom-banner{display:block;position:fixed;left:0;right:0;bottom:12px;margin:auto;max-width:var(--max-width);z-index:40}
+    }
+
+    /* utility */
+    .muted{color:var(--muted)}
+    .small{font-size:0.9rem}
+  </style>
+</head>
+<body>
+  <div class="wrap">
+    <header class="site-header">
+      <div class="brand">
+        <div class="logo">LP</div>
+        <div>
+          <h1 id="page-title">Judul Landing Page Anda</h1>
+          <p class="lead">Subjudul singkat yang menjelaskan nilai utama.</p>
+        </div>
+      </div>
+
+      <!-- AD: di bawah judul -->
+      <div id="ad-below-title" class="ad-slot" role="complementary" aria-label="Iklan di bawah judul">
+        <!-- Masukkan kode iklan (contoh: Google AdSense, native ad, atau iframe banner) di sini -->
+        Placeholder Iklan — letakkan kode iklan Anda di div#ad-below-title
+      </div>
+    </header>
+
+    <main>
+      <section class="content">
+        <div class="hero">
+          <h2>Hero section — tarik perhatian</h2>
+          <p class="small muted">Ringkasan singkat, CTA, dan fitur unggulan.</p>
+          <div style="margin-top:12px">
+            <a class="cta" href="#">Aksi Utama</a>
+          </div>
+        </div>
+
+        <div class="posts" id="posts">
+          <!-- Post 1 -->
+          <article class="post">
+            <h3>Post 1 — Judul menarik</h3>
+            <div class="post-body">
+              <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Dolore, earum.</p>
+            </div>
+          </article>
+
+          <!-- Post 2 -->
+          <article class="post">
+            <h3>Post 2 — Judul kedua</h3>
+            <div class="post-body">
+              <p>Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+            </div>
+          </article>
+
+          <!-- AD: tengah post (di antara content items) -->
+          <div id="ad-middle-post" class="ad-slot" role="complementary" aria-label="Iklan di tengah post">
+            <!-- Masukkan kode iklan Anda di sini. Contoh: <script async src="..."></script> <ins class="adsbygoogle" ...></ins> -->
+            Placeholder Iklan — letakkan kode iklan Anda di div#ad-middle-post
+          </div>
+
+          <!-- Post 3 -->
+          <article class="post">
+            <h3>Post 3 — Judul ketiga</h3>
+            <div class="post-body">
+              <p>Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
+            </div>
+          </article>
+
+        </div>
+      </section>
+
+      <aside class="sidebar">
+        <div class="post" style="padding:14px">
+          <h4>Sidebar</h4>
+          <p class="small muted">Tautan, penawaran, atau iklan lain bisa ditempatkan di sini.</p>
+        </div>
+      </aside>
+    </main>
+
+    <!-- contoh banner bawah (opsional) -->
+    <div class="bottom-banner">
+      <div class="ad-slot" style="min-height:60px">
+        Placeholder Banner Bawah (mobile)
+      </div>
+    </div>
+
+  </div>
+
+  <script>
+    /* Contoh cara memasukkan kode iklan secara dinamis (jangan gunakan jika ad provider
+       sudah meminta script di-include langsung pada HTML). Hanya contoh untuk developer:
+
+       // document.getElementById('ad-below-title').innerHTML = '<!-- paste ad code here -->';
+    */
+
+    // Accessibility: beri label jika kosong
+    document.querySelectorAll('.ad-slot').forEach(slot => {
+      if (!slot.innerText.trim()) {
+        slot.innerText = 'Iklan';
+      }
+    });
+
+    // Contoh: jika ingin menyisipkan iklan setelah post ke-2 secara otomatis
+    // (atau bisa dikontrol server-side ketika rendering list post)
+    (function insertAdBetweenPosts(){
+      // already placed in markup, so nothing to do here. Keperluan dynamic insertion dapat ditambahkan.
+    })();
+  </script>
+</body>
+</html>
